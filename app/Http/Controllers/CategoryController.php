@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class CategoryController extends Controller
     public function index() {
         return view('Home',[
             "title" => "HOME",
-            "Category" => Category::all()
+            "Category" => Category::all(),
+            "Book" => Book::all()
         ]);
     }
 

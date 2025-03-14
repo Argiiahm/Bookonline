@@ -17,9 +17,9 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            "nama_buku" => fake()->word(mt_rand(9,12)),
-            "jumlah_halaman" => fake()->randomDigit(mt_rand(4,8)),
-            "slug" => fake()->slug(),
+            "nama_buku" => $this->faker->word(mt_rand(9,12)),
+            "slug" => $this->faker->slug(),
+            "isi" => '<p>' . implode('</p><p>', $this->faker->paragraphs(mt_rand(5, 12))) . '</p>',
             "User_id" => mt_rand(1,15),
             "Category_id" => mt_rand(0,6),
         ];

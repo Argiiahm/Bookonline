@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 200vh;
+  background: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background: #333;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar nav ul li a:hover {
+  background: #555;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Tombol Menu */
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+}
+
+.open-btn {
+  display: none;
+  top: 20px;
+  left: 20px;
+  color: black;
+  position: fixed;
+}
+
+.close-btn {
+  display: none;
+  top: 10px;
+  right: 10px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .sidebar {
+      transform: translateX(-100%);
+      width: 70%;
+      height: 200vh;
+  }
+  .open-btn {
+      display: block;
+  }
+  .close-btn {
+      display: block;
+      color: white;
+  }
+  .content {
+      margin-left: 0;
+  }
+  .sidebar.show {
+      transform: translateX(0);
+  }
+
+  .table table {
+    max-width:350px;
+  }
+  .table th {
+    width: 100px;
+  }
+ 
+  .img-detail img {
+    max-width: 300px;
+    /* overflow: hidden; */
+    /* z-index: 0; */
+  }
+
+
+}
+
+.button {
+  text-align: center;
+}
+.button button {
+  width: 200px;
+  height: 5vh;
+  cursor: pointer;
+  margin-top: 300px;
+}
+
+.title-dashboard {
+  max-width: 100%;
+  padding: 20px;
+  margin-top: 45px;
+}
+
+h1 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+  .title-dashboard {
+      padding: 15px;
+      margin-bottom: 15px;
+  }
+  
+  .table {
+      width: 100%;
+      overflow-x: auto;
+  }
+  
+  table {
+      width: 100%;
+      min-width: 100%;
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+  
+  th, td {
+      padding: 8px;
+  }
+
+
+}
+
+
+
+.detail-container {
+  width: 360px;
+  /* background: orange;
+  margin: 40px 300px; */
+  margin: 80px 30px;
+}
+
+.img-detail {
+  /* position: relative; */
+  margin-top: 10px;
+}
+
+.img-detail img {
+  height: 40vh;
+  /* object-fit: cover; */
+  width: 500px;
+}
+
+.title-dashboard label {
+  display: block;
+}
+
+
+
+.title-dashboard-2 {
+  max-width: 100%;
+  padding: 15px;
+  margin-top: 45px;
+  
+}
+
+h1 {
+  font-size: 22px;
+  color: #333;
+  border-bottom: 1px solid black;
+  width: fit-content;
+}
+
+form {
+  margin-top: 10px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, trix-editor {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  .title-dashboard-2 {
+      padding: 10px;
+  }
+  
+  input, select, trix-editor, button {
+      font-size: 12px;
+      padding: 6px;
+  }
+}
+

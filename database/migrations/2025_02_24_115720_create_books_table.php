@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('nama_buku');
-            $table->string('jumlah_halaman');
             $table->string('slug');
+            $table->string('image')->nullable();
+            $table->text('isi');
             $table->foreignId('Category_id');
             $table->foreignId('User_id');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
