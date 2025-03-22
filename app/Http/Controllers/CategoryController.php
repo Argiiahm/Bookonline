@@ -12,7 +12,7 @@ class CategoryController extends Controller
         return view('Home',[
             "title" => "HOME",
             "Category" => Category::all(),
-            "Book" => Book::all()
+            "Book" => Book::latest()->take(5)->get()
         ]);
     }
 

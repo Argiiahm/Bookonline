@@ -23,11 +23,15 @@
                 <ul>
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/dashboard/book">My Post</a></li>
-                    <li><a href="/">Back To Home</a></li>
+                    @can('admin')
+                    <li style="color: rgba(128, 128, 128, 0.523)">Halaman Admin</li>
+                    <li><a href="/dashboard/category">Category</a></li>        
+                    @endcan
+                    {{-- <li><a href="/">Back To Home</a></li> --}}
                     <div class="button">
                         <li>
                             <form action="/logout" method="POST">
-                                @csrf
+                                @csrf         
                                 <button type="submit"><i class="ph ph-sign-out"></i>Logout</button>
                             </form>
                         </li>

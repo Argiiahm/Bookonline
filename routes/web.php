@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardBookController;
-
+use App\Http\Middleware\isAdmin;
 
 Route::get('/',[CategoryController::class, 'index']);
 Route::get('Categories/{Book:slug}',[CategoryController::class, 'Book']);
@@ -34,4 +35,6 @@ Route::get('/dashboard',function(){
 
 Route::get('/dashboard/book/cekSlug', [DashboardBookController::class, 'cekSlug'])->middleware('auth');  //Slug Otomatis
 Route::resource('/dashboard/book',DashboardBookController::class)->middleware('auth');
+
+Route::resource('/dashboard/category', AdminCategoryController::class)->except('show')->middleware(isAdmin::class);
 

@@ -52,7 +52,7 @@ class Book extends Model
         return $this->belongsTo(User::class,'User_id');
     }
 
-    public function getRouteKeyName() {  //Supa Tidak Pake ID
+    public function getRouteKeyName() {  //Supaya Tidak Pake ID
           return 'slug';
     }
 
